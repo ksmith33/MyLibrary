@@ -5,9 +5,9 @@ function Library () {
 	const { libraryId } = useParams();
 
 	return (
-		<div>
+		<main>
 			Library { libraryId }
-		</div>
+		</main>
 	)
 }
 

@@ -1,10 +1,11 @@
+import LibrariesList from '../../components/libraries-list/libraries-list.component';
 import './libraries.styles.scss';
 
 function Libraries () {
 	return (
-		<div>
-			Libraries
-		</div>
+		<main className='libraries-container'>
+			<LibrariesList />
+		</main>
 	)
 }
 
