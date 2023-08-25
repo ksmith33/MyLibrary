@@ -1,9 +1,18 @@
 .button-container {
 	background-color: #C8B6A6;
 	border: none;
-	margin: 0;
+	margin: 0em 1em 0em 0em;
 
 	&:hover{
 		background-color: #bfb0a1;
+		cursor: pointer;
+	}
+
+	&.listItem {
+		display: block;
+		width: 100%;
+		text-align: left;
+		background-color: transparent;
+		border: none;
 	}
 }

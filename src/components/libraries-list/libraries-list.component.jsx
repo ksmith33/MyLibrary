@@ -1,18 +1,12 @@
-import { useEffect, useState } from "react";
+import { useContext } from "react";
 import "./libraries-list.styles.scss";
-import CreateLibrary from "../create-library/create-library.component";
+import CreateLibraryButton from "../create-library-button/create-library-button.component";
 import LibraryListItem from "../library-list-item/library-list-item.component";
 import { Link } from "react-router-dom";
+import { LibrariesContext } from "../../contexts/libraries.context";
 
 function LibrariesList () {
-	const [libraries, setLibraries] = useState(() => {
-		const libraries = JSON.parse(localStorage.getItem('libraries'));
-		return libraries ?? [];
-	});
-
-	useEffect(() => {
-    localStorage.setItem('libraries', JSON.stringify(libraries));
-  }, [libraries]);
+	const { libraries, setLibraries } = useContext(LibrariesContext);
 
 	function addLibrary (library) {
 		setLibraries([...libraries, library]);
@@ -23,19 +17,20 @@ function LibrariesList () {
 			<h2>Libraries</h2>
 			<ul>
 				{
+					//fix so that text is outside of colored area
 					libraries.map((library) => {
 						const { name, thumbnail, id } = library;
 						return (
 							<LibraryListItem key={id}>
 									<Link to={`/library/${id}`}>
 										{thumbnail && <img src={ thumbnail } alt="name" />}
-										{ name }
+										<span>{ name }</span>
 									</Link>
 							</LibraryListItem>
 						)
 					})
 				}
-				<CreateLibrary addLibrary= { addLibrary }/>
+				<CreateLibraryButton addLibrary= { addLibrary }/>
 			</ul>
 		</section>
 	)

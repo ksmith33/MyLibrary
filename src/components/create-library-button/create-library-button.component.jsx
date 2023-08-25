@@ -3,7 +3,7 @@ import { v4 } from "uuid";
 import Button from "../button/button.component";
 import LibraryListItem from "../library-list-item/library-list-item.component";
 
-function CreateLibrary ({ addLibrary }) {
+function CreateLibraryButton ({ addLibrary }) {
 	const [formIsHidden, setFormIsHidden] = useState(true);
 	const [name, setName] = useState("");
 
@@ -40,11 +40,11 @@ function CreateLibrary ({ addLibrary }) {
 						onChange={ handleNameChange }
 						required
 					/>
-					<Button type="submit">Submit</Button>
+					<Button type="submit" buttonType="default">Submit</Button>
 				</form>
 			}
 		</LibraryListItem>
 	)
 }
 
-export default CreateLibrary;
+export default CreateLibraryButton;

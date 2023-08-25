@@ -24,7 +24,7 @@ function SearchBar () {
 				onChange={handleSearchChange}
 				placeholder="Search"
 			/>
-			<Button type="submit"> Search </Button>
+			<Button type="submit" buttonType="default"> Search </Button>
 		</form>
 	)
 }
