@@ -33,6 +33,9 @@ body, input, button, select, option, textarea {
 	font-size: inherit;
 }
 
+* {
+	box-sizing: border-box;
+}
 
 
 

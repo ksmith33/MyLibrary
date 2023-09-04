@@ -24,8 +24,8 @@ function LibrariesList () {
 							<LibraryListItem key={id}>
 									<Link to={`/library/${id}`}>
 										{thumbnail && <img src={ thumbnail } alt="name" />}
-										<span>{ name }</span>
 									</Link>
+									<span>{ name }</span>
 							</LibraryListItem>
 						)
 					})

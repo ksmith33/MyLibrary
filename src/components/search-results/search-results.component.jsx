@@ -26,11 +26,11 @@ function SearchResults () {
 			<ul className="search-results-container">
 				{
 					searchResults.map(searchResult => {
-						const { cover_edition_key, cover_i } = searchResult;
+						const { cover_edition_key } = searchResult;
 						return (
 							<BookListing book={ searchResult }>
 								<div className="options">
-									<AddToLibraryButton bookId={ cover_i }/>
+									<AddToLibraryButton book={ searchResult }/>
 									<Link to={`https://openlibrary.org/works/${cover_edition_key}`} target="_blank">View on OpenLibrary</Link>
 								</div>
 							</BookListing>

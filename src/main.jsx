@@ -10,6 +10,7 @@ import Library from './Routes/library/library.component';
 import Header from './Routes/header/header.component';
 import './index.css';
 import { LibrariesProvider } from './contexts/libraries.context';
+import { BooksProvider } from './contexts/books.context';
 
 const router = createBrowserRouter([
 	{
@@ -34,8 +35,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-		<LibrariesProvider>
-			<RouterProvider router={router}/>
-		</LibrariesProvider>
+		<BooksProvider>
+			<LibrariesProvider>
+				<RouterProvider router={router}/>
+			</LibrariesProvider>
+		</BooksProvider>
   </React.StrictMode>,
 )
