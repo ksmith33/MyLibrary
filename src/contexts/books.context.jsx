@@ -6,7 +6,6 @@ export const BooksContext = createContext({
 });
 
 export function BooksProvider ({ children }){
-
 	const [completedBooks, setCompletedBooks] = useState(() => {
 		const completedBooks = JSON.parse(localStorage.getItem('completedBooks'));
 		return completedBooks ?? 0;
@@ -15,7 +14,7 @@ export function BooksProvider ({ children }){
 	function updateCompletedBooks () {
 		const newCompleted = completedBooks + 1;
 		setCompletedBooks(newCompleted);
-		localStorage.setItem('totalBooks', newCompleted);
+		localStorage.setItem('completedBooks', newCompleted);
 	}
     
 	const value = { completedBooks, updateCompletedBooks };

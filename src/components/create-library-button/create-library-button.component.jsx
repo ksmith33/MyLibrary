@@ -17,8 +17,9 @@ function CreateLibraryButton ({ addLibrary }) {
 
 	function handleSubmit (event) {
 		event.preventDefault();
+		const libraryId = v4();
 		const newLibrary = {
-			id: v4(),
+			id: libraryId,
 			name: name,
 			thumbnail: "",
 			books: []

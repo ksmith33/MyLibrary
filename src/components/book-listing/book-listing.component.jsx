@@ -1,7 +1,7 @@
 import "./book-listing.styles.scss";
 
 function BookListing ({ book, children }) {
-	const {title, first_publish_year, author_name, cover_i} = book;
+	const { title, first_publish_year, author_name, cover_i } = book;
 	return (
 		<li className="book-listing-container">
 			<img src={`https://covers.openlibrary.org/b/id/${cover_i}-M.jpg`} alt={title} />

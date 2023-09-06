@@ -1,29 +1,24 @@
 import "./add-to-library-button.styles.scss";
-import { LibrariesContext } from "../../contexts/libraries.context";
 import { useContext, useState } from "react";
 import Button from "../button/button.component";
+import { LibrariesContext } from "../../contexts/libraries.context";
 
 function AddToLibraryButton ({ book }) {
 	const [choicesHidden, setChoicesHidden] = useState(true);
-	const { libraries, setLibraries } = useContext(LibrariesContext);
+	const { libraries } = useContext(LibrariesContext);
 
 	function handleAddToLibraryClick () {
 		setChoicesHidden(!choicesHidden);
 	}
 
-	function handleLibraryClick (id) {
+	function handleLibraryClick (libraryDetails) {
 		const { cover_i } = book;
-		//clean up
-		const newLibraries = libraries.map(library => {
-			if(library.id === id) {
-				return !library.books.includes(cover_i) ? {...library, thumbnail: `https://covers.openlibrary.org/b/id/${cover_i}-M.jpg`, books: [...library.books, cover_i]} : library;
-			}
-
-			return library;
-		})
-
+		const { id } = libraryDetails;
+		//clean up 
+		const newLibrary = !libraryDetails.books.includes(cover_i) ? {...libraryDetails, thumbnail: `https://covers.openlibrary.org/b/id/${cover_i}-M.jpg`, books: [...libraryDetails.books, cover_i]} : libraryDetails;
 		localStorage.setItem(cover_i, JSON.stringify({ ...book, completed: false }));
-		setLibraries(newLibraries);
+		localStorage.setItem(id, JSON.stringify(newLibrary));
+
 		setChoicesHidden(true);
 	}
  
@@ -37,10 +32,11 @@ function AddToLibraryButton ({ book }) {
 					<ul className="libraries-list">
 						{
 							libraries.map((library) => {
-								const { name, id } = library;
+								const libraryDetails = JSON.parse(localStorage.getItem(library));
+								const { name, id } = libraryDetails;
 								return (
 									<li key={id}>
-										<Button buttonType="listItem" onClick={() => handleLibraryClick(id)}>{ name }</Button>
+										<Button buttonType="listItem" onClick={() => handleLibraryClick(libraryDetails)}>{ name }</Button>
 									</li>
 								)
 							})
