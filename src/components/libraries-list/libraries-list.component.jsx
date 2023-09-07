@@ -11,7 +11,6 @@ function LibrariesList () {
 	function addLibrary (newLibrary) {
 		const { id } = newLibrary;
 		setLibraries([...libraries, id]);
-		//can move into context
 		localStorage.setItem(id, JSON.stringify(newLibrary));
 	};
 

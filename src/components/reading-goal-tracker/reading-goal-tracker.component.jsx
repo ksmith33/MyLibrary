@@ -5,6 +5,7 @@ import Button from "../button/button.component";
 
 function ReadingGoalTracker ( { readingGoal, setReadingGoal }) {
 	const { completedBooks } = useContext(BooksContext);
+	console.log('in reading goal tracker')
 	const percentCompleted = completedBooks/readingGoal * 100;
 
 	function handleClick () {

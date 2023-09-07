@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import { useSearchParams, Link } from "react-router-dom";
 import { fetchBooks } from "../../services/books";
-import BookListing from "../book-listing/book-listing.component";
 import "./search-results.styles.scss";
-import AddToLibraryButton from "../add-to-library-button/add-to-library-button.component";
+import SearchBookListing from "../search-book-listing/search-book-listing.component";
 
 function SearchResults () {
 	const [searchParams] = useSearchParams();
@@ -26,16 +25,9 @@ function SearchResults () {
 			<ul className="search-results-container">
 				{
 					searchResults.map(searchResult => {
-						const { cover_edition_key } = searchResult;
 						return (
-							<BookListing book={ searchResult }>
-								<div className="options">
-									<AddToLibraryButton book={ searchResult }/>
-									<Link to={`https://openlibrary.org/works/${cover_edition_key}`} target="_blank">View on OpenLibrary</Link>
-								</div>
-							</BookListing>
+							<SearchBookListing book={ searchResult } />
 						)
-
 					})
 				}
 			</ul>

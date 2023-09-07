@@ -5,12 +5,13 @@ export const LibrariesContext = createContext({
 	setLibraries: () => {}
 });
 
+
 export function LibrariesProvider ({ children }){
 	const [libraries, setLibraries] = useState(() => {
 		const libraries = JSON.parse(localStorage.getItem('libraries'));
 		return libraries ?? [];
 	});
-
+	
 	useEffect(() => {
     localStorage.setItem('libraries', JSON.stringify(libraries));
   }, [libraries]);

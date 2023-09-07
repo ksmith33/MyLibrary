@@ -10,7 +10,7 @@ function ReadingGoalForm ( { setReadingGoal }) {
 		setFormIsHidden(!formIsHidden);
 	}
 
-	function handleSubmit () {
+	function handleSubmit (event) {
 		event.preventDefault();
 		setReadingGoal(newReadingGoal);
 	}

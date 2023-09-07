@@ -1,4 +1,4 @@
-import { useState, createContext } from "react";
+import { useState, useEffect, createContext } from "react";
 
 export const BooksContext = createContext({
 	completedBooks: 0,
@@ -7,16 +7,14 @@ export const BooksContext = createContext({
 
 export function BooksProvider ({ children }){
 	const [completedBooks, setCompletedBooks] = useState(() => {
-		const completedBooks = JSON.parse(localStorage.getItem('completedBooks'));
+		const completedBooks = JSON.parse(localStorage.getItem('completed'));
 		return completedBooks ?? 0;
 	});
 
-	function updateCompletedBooks () {
-		const newCompleted = completedBooks + 1;
-		setCompletedBooks(newCompleted);
-		localStorage.setItem('completedBooks', newCompleted);
-	}
+	useEffect(() => {
+    localStorage.setItem('completed', JSON.stringify(completedBooks));
+  }, [completedBooks]);
     
-	const value = { completedBooks, updateCompletedBooks };
+	const value = { completedBooks, setCompletedBooks };
 	return <BooksContext.Provider value={ value }> { children }</BooksContext.Provider>
 }
