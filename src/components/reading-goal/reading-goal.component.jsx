@@ -14,7 +14,9 @@ function ReadingGoal () {
 	}, [readingGoal]);
 
 	return (
-		readingGoal ? <ReadingGoalTracker readingGoal= { readingGoal } setReadingGoal={ setReadingGoal }/> : <ReadingGoalForm setReadingGoal={ setReadingGoal }/>
+		<section className="reading-goal-container">
+			{readingGoal ? <ReadingGoalTracker readingGoal= { readingGoal } setReadingGoal={ setReadingGoal }/> : <ReadingGoalForm setReadingGoal={ setReadingGoal }/>}
+		</section>
 	)
 }
 

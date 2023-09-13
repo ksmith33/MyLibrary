@@ -1,8 +1,10 @@
 import "./button.styles.scss";
 
 const BUTTON_TYPES = {
-	default: '',
-	listItem: 'listItem'
+	default: 'default',
+	listItem: 'listItem',
+	icon: 'icon'
+
 }
 
 function Button ({ children, buttonType,...otherProps}) {

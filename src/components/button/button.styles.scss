@@ -4,7 +4,7 @@
 	margin: 0em 1em 0em 0em;
 
 	&:hover{
-		background-color: #bfb0a1;
+		background-color: #b09e8c;
 		cursor: pointer;
 	}
 
@@ -14,5 +14,18 @@
 		text-align: left;
 		background-color: transparent;
 		border: none;
+	}
+
+	&.icon {
+		font-size: 1.5rem;
+		width: 1em;
+		height: 1em;
+		padding: 0;
+		background-color: transparent;
+		color: #C8B6A6;
+
+		&:hover{
+			color: #b09e8c;
+		}
 	}
 }

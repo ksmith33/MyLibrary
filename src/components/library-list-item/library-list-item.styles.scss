@@ -13,7 +13,7 @@
 		width: 100%;
 		display: flex;
 		flex-direction: column;
-		background-color: rgb(230, 230, 230);
+		border: solid .05em rgb(219, 219, 219);
 	}
 
 	a {
@@ -26,7 +26,6 @@
 	& > button {
 		justify-content: center;
 		align-items: center;
-		border: none;
 		&:hover {
 			cursor: pointer;
 		}

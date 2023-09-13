@@ -2,11 +2,11 @@ import "./reading-goal-tracker.styles.scss";
 import { BooksContext } from "../../contexts/books.context";
 import { useContext } from "react";
 import Button from "../button/button.component";
+import { MdOutlineCancel } from "react-icons/md";
 
 function ReadingGoalTracker ( { readingGoal, setReadingGoal }) {
 	const { completedBooks } = useContext(BooksContext);
-	console.log('in reading goal tracker')
-	const percentCompleted = completedBooks/readingGoal * 100;
+	const percentCompleted = Math.floor(completedBooks/readingGoal * 100);
 
 	function handleClick () {
 		setReadingGoal(0);
@@ -26,7 +26,7 @@ function ReadingGoalTracker ( { readingGoal, setReadingGoal }) {
 					<p>{ percentCompleted }%</p>
 				</div>
 			</div>
-			<Button onClick = { handleClick } buttonType="default"> X </Button>
+			<Button onClick = { handleClick } buttonType="icon"> <MdOutlineCancel /> </Button>
 		</div>
 		
 	)

@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./search-bar.styles.scss";
 import Button from "../button/button.component";
 import { useNavigate } from "react-router-dom";
+import { MdOutlineSearch } from 'react-icons/md';
 
 function SearchBar () {
 	const [searchTerm, setSearchTerm] = useState("");
@@ -17,14 +18,14 @@ function SearchBar () {
 	}
 
 	return (
-		<form onSubmit={ handleSubmit }>
+		<form onSubmit={ handleSubmit } className="search-bar-container">
 			<input 
-				type="search"
+				type="input"
 				value={searchTerm}
 				onChange={handleSearchChange}
 				placeholder="Search"
 			/>
-			<Button type="submit" buttonType="default"> Search </Button>
+			<Button type="submit" buttonType="icon"> <MdOutlineSearch /> </Button>
 		</form>
 	)
 }

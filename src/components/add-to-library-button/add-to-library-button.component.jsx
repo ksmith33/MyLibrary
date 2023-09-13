@@ -18,7 +18,6 @@ function AddToLibraryButton ({ book }) {
 		const newLibrary = !libraryDetails.books.includes(cover_i) ? {...libraryDetails, thumbnail: `https://covers.openlibrary.org/b/id/${cover_i}-M.jpg`, books: [...libraryDetails.books, cover_i]} : libraryDetails;
 		localStorage.setItem(cover_i, JSON.stringify({ ...book, completed: false }));
 		localStorage.setItem(id, JSON.stringify(newLibrary));
-
 		setChoicesHidden(true);
 	}
  
