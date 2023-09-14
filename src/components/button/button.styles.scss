@@ -3,7 +3,7 @@
 	border: none;
 	margin: 0em 1em 0em 0em;
 
-	&:hover{
+	&:hover {
 		background-color: #b09e8c;
 		cursor: pointer;
 	}
@@ -24,8 +24,12 @@
 		background-color: transparent;
 		color: #C8B6A6;
 
-		&:hover{
+		&:hover {
 			color: #b09e8c;
 		}
+	}
+
+	&.pressed {
+		background-color: #8d7a67;
 	}
 }
