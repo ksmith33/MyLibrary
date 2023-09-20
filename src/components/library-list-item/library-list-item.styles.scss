@@ -30,4 +30,14 @@
 			cursor: pointer;
 		}
 	}
+
+	form {
+		margin-top: 1em;
+		button {
+			margin-left: .5em;
+			margin-right: 0;
+		}
+		display: flex;
+		justify-content: center;
+	}
 }

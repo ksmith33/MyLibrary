@@ -9,16 +9,7 @@ function Library () {
 		const library = JSON.parse(localStorage.getItem(libraryId));
 		return library ?? {};
 	});
-	const { books } = library;
-
-	useEffect(() => {
-		window.addEventListener('storage', (e) => {
-			if(e.key === libraryId){
-				const newLibrary = JSON.parse(localStorage.getItem(libraryId));
-				setLibrary(newLibrary);
-			}
-		});
-	}, []);
+	const { books, name } = library;
 
 	useEffect(() => {
 			localStorage.setItem(libraryId, JSON.stringify(library));
@@ -29,11 +20,12 @@ function Library () {
 			return book != bookId;
 		});
 
-		setLibrary({...library, books: newBooks});
+		setLibrary({...library, books: newBooks, thumbnail: `https://covers.openlibrary.org/b/id/${newBooks[newBooks.length - 1]}-M.jpg`});
 	}
 //rename
 	return (
-		<main>
+		<main className="library-container">
+			<h2>{ name }</h2>
 			<BookList books={books} onClick = {removeBook}/>
 		</main>
 	)
