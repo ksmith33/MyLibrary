@@ -12,18 +12,19 @@ function Library () {
 	const { books, name } = library;
 
 	useEffect(() => {
-			localStorage.setItem(libraryId, JSON.stringify(library));
+		localStorage.setItem(libraryId, JSON.stringify(library));
 	}, [library]);
 	
 	function removeBook (bookId) {
 		const newBooks = books.filter((book) => {
-			return book != bookId;
+			return book !== bookId;
 		});
 
 		setLibrary({...library, books: newBooks, thumbnail: `https://covers.openlibrary.org/b/id/${newBooks[newBooks.length - 1]}-M.jpg`});
 	}
-//rename
+
 	return (
+		
 		<main className="library-container">
 			<h2>{ name }</h2>
 			<BookList books={books} onClick = {removeBook}/>

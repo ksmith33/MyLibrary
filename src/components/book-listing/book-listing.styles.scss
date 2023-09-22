@@ -16,6 +16,7 @@
 .options {
 	display: flex;
 	position: relative;
+	
 	a {
 		background-color: #C8B6A6;
 		border: none;
@@ -25,10 +26,14 @@
 		padding: 1px 6px;
 		flex-grow: 0;
 		border-radius: .1em;
-
+		
 		&:hover {
-			background-color: #bfb0a1;
+			background-color: #8e7153;
 			cursor: pointer;
 		}
+	}
+
+	button {
+		margin: 0em 1em 0em 0em;
 	}
 }

@@ -3,6 +3,7 @@ import { v4 } from "uuid";
 import Button from "../button/button.component";
 import LibraryListItem from "../library-list-item/library-list-item.component";
 
+//createLibraryForm
 function CreateLibraryButton ({ addLibrary }) {
 	const [formIsHidden, setFormIsHidden] = useState(true);
 	const [name, setName] = useState("");
@@ -31,7 +32,7 @@ function CreateLibraryButton ({ addLibrary }) {
 
 	return (
 		<LibraryListItem>
-			<button className='new-library-button' onClick={ handleClick } type="button"> + </button>
+			<button className='list-item' onClick={ handleClick } type="button"> + </button>
 			{
 				!formIsHidden &&
 				<form onSubmit={ handleSubmit }>

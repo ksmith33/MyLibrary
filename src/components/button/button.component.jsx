@@ -3,7 +3,8 @@ import "./button.styles.scss";
 const BUTTON_TYPES = {
 	default: 'default',
 	listItem: 'listItem',
-	icon: 'icon'
+	icon: 'icon',
+	delete: 'icon delete'
 }
 
 function Button ({ children, buttonType, pressed,...otherProps}) {

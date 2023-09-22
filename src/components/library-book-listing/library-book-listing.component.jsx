@@ -17,8 +17,11 @@ function LibraryBookListing ({ bookId, onClick }){
 	
 	return (
 		<BookListing book={ bookDetails } >
-			<Button type="button" buttonType="default" onClick ={() => onClick(bookDetails.cover_i)}>Remove From Library</Button>
-			<Button type="button" buttonType="default" onClick={ handledCompletedClick }>{completed ? 'Mark as Uncomplete' : 'Mark as Complete'}</Button>
+			<div className="options">
+				<Button type="button" buttonType="default" onClick ={() => onClick(bookDetails.cover_i)}>Remove From Library</Button>
+				<Button type="button" buttonType="default" onClick={ handledCompletedClick }>{completed ? 'Mark as Uncomplete' : 'Mark as Complete'}</Button>
+			</div>
+
 		</BookListing>
 	)
 }

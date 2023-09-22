@@ -8,24 +8,15 @@
 		width: 50%;
 	}
 
-	& > button, a {
+	.list-item {
 		height: 90%;
 		width: 100%;
 		display: flex;
 		flex-direction: column;
 		border: solid .05em rgb(219, 219, 219);
-	}
-
-	a {
-		justify-content: flex-end;
-		align-items: center;
-		text-decoration: none;
-		color: black;
-	}
-
-	& > button {
 		justify-content: center;
 		align-items: center;
+
 		&:hover {
 			cursor: pointer;
 		}

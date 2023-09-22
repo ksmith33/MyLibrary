@@ -1,11 +1,14 @@
 .button-container {
-	background-color: #C8B6A6;
 	border: none;
-	margin: 0em 1em 0em 0em;
-	border-radius: .1em;
+	
+	&.default {
+		background-color: #C8B6A6;
+		margin: 0em 1em 0em 0em;
+		border-radius: .1em;
+	}
 
 	&:hover {
-		background-color: #b09e8c;
+		background-color: #8e7153;
 		cursor: pointer;
 	}
 
@@ -26,11 +29,11 @@
 		color: #C8B6A6;
 
 		&:hover {
-			color: #b09e8c;
+			color: #8e7153;
 		}
 	}
 
 	&.pressed {
-		background-color: #8d7a67;
+		background-color: #8e7153;
 	}
 }

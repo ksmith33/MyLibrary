@@ -44,8 +44,9 @@ function SearchResults () {
 			<ul>
 				{
 					page.map(searchResult => {
+						const {cover_i} = searchResult
 						return (
-							<SearchBookListing book={ searchResult } />
+							<SearchBookListing book={ searchResult } key={cover_i}/>
 						)
 					})
 				}
@@ -54,7 +55,7 @@ function SearchResults () {
 				{
 					pages.map(page => {
 						return (
-							<li><Button buttonType = 'default' pressed = {page === currentPage + 1} onClick= {() => handlePageNumberClick(page)}>{page}</Button></li>
+							<li key={page}><Button buttonType = 'default' pressed = {page === currentPage + 1} onClick= {() => handlePageNumberClick(page)} >{page}</Button></li>
 						) 
 					})
 				}

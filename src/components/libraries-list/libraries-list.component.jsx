@@ -24,10 +24,10 @@ function LibrariesList () {
 						const { name, thumbnail } = libraryDetails;
 						return (
 							<LibraryListItem key={library}>
-									<Link to={`/library/${library}`}>
-										{thumbnail && <img src={ thumbnail } alt="name" />}
-									</Link>
-									<span>{ name }</span>
+								<Link to={`/library/${library}`} className="list-item">
+									{thumbnail && <img src={ thumbnail } alt="name" />}
+								</Link>
+								<span>{ name }</span>
 							</LibraryListItem>
 						)
 					})
