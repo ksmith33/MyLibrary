@@ -2,7 +2,7 @@ import "./button.styles.scss";
 
 const BUTTON_TYPES = {
 	default: 'default',
-	listItem: 'listItem',
+	listItem: 'list-item-button',
 	icon: 'icon',
 	delete: 'icon delete'
 }

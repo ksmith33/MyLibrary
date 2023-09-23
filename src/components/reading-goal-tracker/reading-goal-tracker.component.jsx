@@ -1,8 +1,8 @@
-import "./reading-goal-tracker.styles.scss";
-import { BooksContext } from "../../contexts/books.context";
 import { useContext } from "react";
-import Button from "../button/button.component";
+import { BooksContext } from "../../contexts/books.context";
 import { MdOutlineCancel } from "react-icons/md";
+import Button from "../button/button.component";
+import "./reading-goal-tracker.styles.scss";
 
 function ReadingGoalTracker ( { readingGoal, setReadingGoal }) {
 	const { completedBooks } = useContext(BooksContext);

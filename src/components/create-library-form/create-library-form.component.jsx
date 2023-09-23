@@ -3,13 +3,12 @@ import { v4 } from "uuid";
 import Button from "../button/button.component";
 import LibraryListItem from "../library-list-item/library-list-item.component";
 
-//createLibraryForm
-function CreateLibraryButton ({ addLibrary }) {
-	const [formIsHidden, setFormIsHidden] = useState(true);
+function CreateLibraryForm ({ addLibrary }) {
+	const [formIsVisible, setFormIsVisible] = useState(false);
 	const [name, setName] = useState("");
 
 	function handleClick () {
-		setFormIsHidden(!formIsHidden);
+		setFormIsVisible(!formIsVisible);
 	}
 
 	function handleNameChange (event) {
@@ -27,18 +26,18 @@ function CreateLibraryButton ({ addLibrary }) {
 		}
 
 		addLibrary(newLibrary);
-		setFormIsHidden(true);
+		setFormIsVisible(false);
 	}
 
 	return (
 		<LibraryListItem>
 			<button className='list-item' onClick={ handleClick } type="button"> + </button>
 			{
-				!formIsHidden &&
+				formIsVisible &&
 				<form onSubmit={ handleSubmit }>
 					<input 
 						type="text"
-						placeholder={ name }
+						value={ name }
 						onChange={ handleNameChange }
 						required
 					/>
@@ -49,4 +48,4 @@ function CreateLibraryButton ({ addLibrary }) {
 	)
 }
 
-export default CreateLibraryButton;
+export default CreateLibraryForm;

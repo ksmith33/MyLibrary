@@ -1,31 +1,25 @@
 .reading-goal-tracker-container {
-	width: 100%;
-	display: flex;
 	align-items: center;
-	justify-content: center;
-	
-	button {
-		height: 2em;
-		margin-right: 0;
-	}
+	display: flex;
+	width: 100%;
 }
 
 .reading-goal {
+	border: solid .05em rgb(219, 219, 219);
+	border-radius: 2em;
 	flex-basis: 95%;
+	height: 3em;
 	margin-right: .5em;
 	position: relative;
-	border-radius: 2em;
-	height: 3em;
-	border: solid .05em rgb(219, 219, 219);
 }
 
 .stats {
-	width: 100%;
+	display: flex;
+	justify-content: space-between;
 	padding: 0em 1em;
 	position: absolute;
 	top: 1em;
-	display: flex;
-	justify-content: space-between;
+	width: 100%;
 }
 
 .books-completed {

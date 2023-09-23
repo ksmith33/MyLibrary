@@ -3,7 +3,6 @@
 	
 	&.default {
 		background-color: #C8B6A6;
-		margin: 0em 1em 0em 0em;
 		border-radius: .1em;
 	}
 
@@ -12,12 +11,12 @@
 		cursor: pointer;
 	}
 
-	&.listItem {
-		display: block;
-		width: 100%;
-		text-align: left;
+	&.list-item-button {
 		background-color: transparent;
-		border: none;
+		border: none;	
+		display: block;
+		text-align: left;
+		width: 100%;
 	}
 
 	&.icon {

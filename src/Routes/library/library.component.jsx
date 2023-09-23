@@ -1,7 +1,7 @@
-import { useParams } from "react-router-dom";
-import "./library.styles.scss";
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import BookList from "../../components/book-list/book-list.component";
+import "./library.styles.scss";
 
 function Library () {
 	const { libraryId } = useParams();
@@ -27,7 +27,7 @@ function Library () {
 		
 		<main className="library-container">
 			<h2>{ name }</h2>
-			<BookList books={books} onClick = {removeBook}/>
+			<BookList books={ books } onClick = { removeBook }/>
 		</main>
 	)
 }

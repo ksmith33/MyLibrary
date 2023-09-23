@@ -1,9 +1,9 @@
-.search-results-container {
-
-}
-
 .page-numbers-list {
 	display: flex;
-	margin: 1em 0em;
 	justify-content: center;
+	margin: 1em 0em;
+	
+	button {
+		margin: 0em .5em;
+	}
 }

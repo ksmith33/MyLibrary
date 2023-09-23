@@ -1,18 +1,19 @@
 import { useState } from "react";
-import "./reading-goal-form.styles.scss";
 import Button from "../button/button.component";
+import "./reading-goal-form.styles.scss";
 
 function ReadingGoalForm ( { setReadingGoal }) {
-	const [formIsHidden, setFormIsHidden] = useState(true);
-	const [newReadingGoal, setNewReadingGoal] = useState("");
+	const [formIsVisible, setFormIsVisible] = useState(false);
+	const [newReadingGoal, setNewReadingGoal] = useState();
 
 	function handleClick () {
-		setFormIsHidden(!formIsHidden);
+		setFormIsVisible(!formIsVisible);
 	}
 
 	function handleSubmit (event) {
 		event.preventDefault();
 		setReadingGoal(newReadingGoal);
+		setFormIsVisible(false);
 	}
 
 	function handleChange (event) {
@@ -21,19 +22,17 @@ function ReadingGoalForm ( { setReadingGoal }) {
  
 	return (
 		<div className="reading-goal-form-container">
-			<Button onClick = {handleClick} buttonType="default"> Add Reading Goal</Button>
-			{ !formIsHidden &&
+			<Button onClick = { handleClick } buttonType="default"> Add Reading Goal</Button>
+			{ formIsVisible &&
 				<form onSubmit = { handleSubmit }>
 					<input 
 						type="text"
-						name="readingGoal"
-						value={newReadingGoal}
-						onChange={handleChange}
+						value={ newReadingGoal }
+						onChange={ handleChange }
 					/>
 					<Button type="submit" buttonType="default">Confirm</Button>
 				</form>
 			}
-			
 		</div>
 	)
 }

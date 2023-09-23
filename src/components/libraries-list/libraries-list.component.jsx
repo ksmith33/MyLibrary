@@ -1,9 +1,11 @@
-import "./libraries-list.styles.scss";
-import CreateLibraryButton from "../create-library-button/create-library-button.component";
-import LibraryListItem from "../library-list-item/library-list-item.component";
-import { Link } from "react-router-dom";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
+import { MdOutlineClear } from 'react-icons/md';
 import { LibrariesContext } from "../../contexts/libraries.context";
+import Button from "../button/button.component";
+import CreateLibraryForm from "../create-library-form/create-library-form.component";
+import LibraryListItem from "../library-list-item/library-list-item.component";
+import "./libraries-list.styles.scss";
 
 function LibrariesList () {
 	const { libraries, setLibraries } = useContext(LibrariesContext);
@@ -13,6 +15,12 @@ function LibrariesList () {
 		setLibraries([...libraries, id]);
 		localStorage.setItem(id, JSON.stringify(newLibrary));
 	};
+
+	function onXClick (toRemove) {
+		const newLibraries = libraries.filter(library => {return library !== toRemove});
+		setLibraries(newLibraries);
+		localStorage.removeItem(toRemove);
+	} 
 
 	return (
 		<section className="libraries-list-container">
@@ -24,15 +32,16 @@ function LibrariesList () {
 						const { name, thumbnail } = libraryDetails;
 						return (
 							<LibraryListItem key={library}>
-								<Link to={`/library/${library}`} className="list-item">
-									{thumbnail && <img src={ thumbnail } alt="name" />}
+								<Button type='button' buttonType='delete' onClick={ () => onXClick(library) }><MdOutlineClear /></Button>
+								<Link to={ `/library/${library}` } className="list-item">
+									{ thumbnail && <img src={ thumbnail } alt={ name } /> }
 								</Link>
 								<span>{ name }</span>
 							</LibraryListItem>
 						)
 					})
 				}
-				<CreateLibraryButton addLibrary= { addLibrary }/>
+				<CreateLibraryForm addLibrary= { addLibrary }/>
 			</ul>
 		</section>
 	)

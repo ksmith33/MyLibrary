@@ -5,7 +5,6 @@ export const LibrariesContext = createContext({
 	setLibraries: () => {}
 });
 
-
 export function LibrariesProvider ({ children }){
 	const [libraries, setLibraries] = useState(() => {
 		const libraries = JSON.parse(localStorage.getItem('libraries'));

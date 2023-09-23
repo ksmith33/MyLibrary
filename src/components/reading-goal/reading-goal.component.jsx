@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import "./reading-goal.styles.scss";
 import ReadingGoalForm from "../reading-goal-form/reading-goal-form.component";
 import ReadingGoalTracker from "../reading-goal-tracker/reading-goal-tracker.component";
+import "./reading-goal.styles.scss";
 
 function ReadingGoal () {
 	const [readingGoal, setReadingGoal] = useState (() => {
@@ -15,7 +15,7 @@ function ReadingGoal () {
 
 	return (
 		<section className="reading-goal-container">
-			{readingGoal ? <ReadingGoalTracker readingGoal= { readingGoal } setReadingGoal={ setReadingGoal }/> : <ReadingGoalForm setReadingGoal={ setReadingGoal }/>}
+			{ readingGoal ? <ReadingGoalTracker readingGoal= { readingGoal } setReadingGoal={ setReadingGoal }/> : <ReadingGoalForm setReadingGoal={ setReadingGoal }/> }
 		</section>
 	)
 }

@@ -1,8 +1,8 @@
 import { useState } from "react";
-import "./search-bar.styles.scss";
-import Button from "../button/button.component";
 import { useNavigate } from "react-router-dom";
 import { MdOutlineSearch } from 'react-icons/md';
+import Button from "../button/button.component";
+import "./search-bar.styles.scss";
 
 function SearchBar () {
 	const [searchTerm, setSearchTerm] = useState("");
@@ -21,11 +21,11 @@ function SearchBar () {
 		<form onSubmit={ handleSubmit } className="search-bar-container">
 			<input 
 				type="input"
-				value={searchTerm}
-				onChange={handleSearchChange}
+				value={ searchTerm }
+				onChange={ handleSearchChange }
 				placeholder="Search"
 			/>
-			<Button type="submit" buttonType="icon"> <MdOutlineSearch /> </Button>
+			<Button type="submit" buttonType="icon"><MdOutlineSearch /></Button>
 		</form>
 	)
 }

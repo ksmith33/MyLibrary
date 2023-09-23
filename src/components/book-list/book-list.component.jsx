@@ -1,5 +1,3 @@
-import BookListing from "../book-listing/book-listing.component";
-import Button from "../button/button.component";
 import LibraryBookListing from "../library-book-listing/library-book-listing.component";
 import "./book-list.styles.scss";
 
