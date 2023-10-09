@@ -1,7 +1,7 @@
 .library-list-item-container {
 	position: relative;
 	width: 100%;
-
+	
 	&:hover {
 		.delete {
 			display: block;
@@ -26,6 +26,7 @@
 	height: 90%;
 	justify-content: center;
 	width: 100%;
+  
 
 	&:hover {
 		cursor: pointer;
@@ -40,7 +41,11 @@
 
 .delete {
 	display: none;
-	left: 90%;
 	position: absolute;
+	right: 3%;
 	top: 3%;	
+}
+
+@media screen and (max-width: 780px) {
+
 }

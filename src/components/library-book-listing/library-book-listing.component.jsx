@@ -21,7 +21,7 @@ function LibraryBookListing ({ bookId, onClick }){
 		<BookListing book={ bookDetails } >
 			<div className="options">
 				<Button type="button" buttonType="default" onClick ={ () => onClick(bookId) }>Remove From Library</Button>
-				<Button type="button" buttonType="default" onClick={ handleCompletedClick }>{completed ? 'Mark as Uncomplete' : 'Mark as Complete'}</Button>
+				<Button type="button" buttonType="default" onClick={ handleCompletedClick }>{completed ? 'Mark as Incomplete' : 'Mark as Complete'}</Button>
 			</div>
 		</BookListing>
 	)

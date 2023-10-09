@@ -26,7 +26,7 @@ function ReadingGoalTracker ( { readingGoal, setReadingGoal }) {
 					<p>{ percentCompleted }%</p>
 				</div>
 			</div>
-			<Button onClick = { handleClick } buttonType="icon"> <MdOutlineCancel /> </Button>
+			<Button onClick = { handleClick } buttonType="icon" aria-label='remove reading goal'> <MdOutlineCancel /> </Button>
 		</div>
 		
 	)

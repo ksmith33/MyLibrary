@@ -25,7 +25,7 @@ function SearchBar () {
 				onChange={ handleSearchChange }
 				placeholder="Search"
 			/>
-			<Button type="submit" buttonType="icon"><MdOutlineSearch /></Button>
+			<Button type="submit" buttonType="icon" aria-label='search'><MdOutlineSearch /></Button>
 		</form>
 	)
 }

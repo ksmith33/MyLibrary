@@ -21,4 +21,8 @@
 			outline: solid .1em #C8B6A6;
 		}
 	}
+
+	@media screen and (max-width: 780px) {
+		flex-basis: 15em;
+	}
 }

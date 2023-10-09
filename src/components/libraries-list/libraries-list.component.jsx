@@ -32,7 +32,7 @@ function LibrariesList () {
 						const { name, thumbnail } = libraryDetails;
 						return (
 							<LibraryListItem key={library}>
-								<Button type='button' buttonType='delete' onClick={ () => onXClick(library) }><MdOutlineClear /></Button>
+								<Button type='button' buttonType='delete' onClick={ () => onXClick(library) } aria-label='delete-library'><MdOutlineClear /></Button>
 								<Link to={ `/library/${library}` } className="list-item">
 									{ thumbnail && <img src={ thumbnail } alt={ name } /> }
 								</Link>

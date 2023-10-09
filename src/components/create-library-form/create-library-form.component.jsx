@@ -31,7 +31,7 @@ function CreateLibraryForm ({ addLibrary }) {
 
 	return (
 		<LibraryListItem>
-			<button className='list-item' onClick={ handleClick } type="button"> + </button>
+			<button className='list-item' onClick={ handleClick } type="button" aria-label="add library"> + </button>
 			{
 				formIsVisible &&
 				<form onSubmit={ handleSubmit }>

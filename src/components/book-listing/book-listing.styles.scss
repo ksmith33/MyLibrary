@@ -2,7 +2,7 @@
 	border-bottom: .05em solid #c3bbb2;
 	display: flex;
 	padding: 1em;
-	
+
 	img {
 		flex-basis: 5em;
 		min-width: 5em;
@@ -12,12 +12,13 @@
 .book-details {
 	margin-left: 1em;
 	min-width: 0em;
+	width: 100%;
 }
 
 .options {
 	display: flex;
 	position: relative;
-	//change flex direction in media query
+	
 	a {
 		background-color: #C8B6A6;
 		border: none;
@@ -26,6 +27,7 @@
 		margin: 0em 1em 0em 0em;
 		padding: 1px 6px;
 		text-decoration: none;
+
 		&:hover {
 			background-color: #8e7153;
 			cursor: pointer;
@@ -34,5 +36,36 @@
 
 	button {
 		margin: 0em 1em 0em 0em;
+	}
+}
+
+@media screen and (max-width: 780px) {
+	.book-listing-container {
+		flex-direction: column;
+		padding: 1em 0em 0em 0em;
+
+		img {
+			align-self: center;
+			flex-basis: 15em;
+			min-height: 5em;
+			width: 10em;
+		}
+	}
+
+	.book-details {
+		margin: 1em 0em 0em 0em;
+	}
+
+	.options {
+		flex-direction: column;
+
+		button {
+			margin: 0em 0em 1em 0em;
+		}
+
+		a {
+			width: 100%;
+			text-align: center;
+		}
 	}
 }

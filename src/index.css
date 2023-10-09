@@ -42,5 +42,10 @@ body, input, button, select, option, textarea {
 	box-sizing: border-box;
 }
 
+@media screen and (max-width: 780px) {
+	main {
+		padding: 1em 5em;
+	}
+}
 
 

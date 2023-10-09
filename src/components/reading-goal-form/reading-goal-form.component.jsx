@@ -22,7 +22,7 @@ function ReadingGoalForm ( { setReadingGoal }) {
  
 	return (
 		<div className="reading-goal-form-container">
-			<Button onClick = { handleClick } buttonType="default"> Add Reading Goal</Button>
+			<Button onClick = { handleClick } buttonType="default">Add Reading Goal</Button>
 			{ formIsVisible &&
 				<form onSubmit = { handleSubmit }>
 					<input 
