@@ -5,7 +5,11 @@ MyLibrary is an application designed to help readers track their progress toward
 coming soon
 
 ## Video Demo
-coming soon 
+ 
+
+https://github.com/ksmith33/MyLibrary/assets/54692831/e9b9ce41-6b45-498b-8fbd-6cc5bad9df85
+
+
 
 ## Tech Stack
 - Javascript ES6
