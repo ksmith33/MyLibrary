@@ -1,5 +1,4 @@
 import LibraryBookListing from "../library-book-listing/library-book-listing.component";
-import "./book-list.styles.scss";
 
 function BookList ({ books, onClick }) {
 	return (

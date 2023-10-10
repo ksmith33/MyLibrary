@@ -7,8 +7,8 @@ function BookListing ({ book, children }) {
 			<img src={ `https://covers.openlibrary.org/b/id/${cover_i}-M.jpg` } alt={ title } />
 			<section className="book-details">
 				<p><b>{ title }</b></p>
-				<p>by { author_name }</p>
-				<p>published { first_publish_year }</p>
+				<p>By { author_name }</p>
+				<p>Published { first_publish_year }</p>
 				{ children }
 			</section>
 		</li>
