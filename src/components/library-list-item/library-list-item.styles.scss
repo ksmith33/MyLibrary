@@ -18,6 +18,13 @@
 	}
 }	
 
+.delete {
+	display: none;
+	position: absolute;
+	right: 3%;
+	top: 3%;	
+}
+
 .list-item {
 	align-items: center;
 	border: solid .05em rgb(219, 219, 219);
@@ -37,15 +44,4 @@
 		flex-shrink: 1;
 		width: 50%;
 	}
-}
-
-.delete {
-	display: none;
-	position: absolute;
-	right: 3%;
-	top: 3%;	
-}
-
-@media screen and (max-width: 780px) {
-
 }

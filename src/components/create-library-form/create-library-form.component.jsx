@@ -27,6 +27,7 @@ function CreateLibraryForm ({ addLibrary }) {
 
 		addLibrary(newLibrary);
 		setFormIsVisible(false);
+		setName("");
 	}
 
 	return (

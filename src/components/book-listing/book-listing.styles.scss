@@ -42,8 +42,7 @@
 @media screen and (max-width: 780px) {
 	.book-listing-container {
 		flex-direction: column;
-		padding: 1em 0em 0em 0em;
-
+		
 		img {
 			align-self: center;
 			flex-basis: 15em;
@@ -59,7 +58,7 @@
 	.options {
 		flex-direction: column;
 
-		button {
+		& > button {
 			margin: 0em 0em 1em 0em;
 		}
 

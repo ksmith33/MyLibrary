@@ -4,9 +4,17 @@
 	position: absolute;
 	top: 1.5em;
 	width: 7.03em;
-	li{
-		&:hover{
+
+	li {
+		&:hover {
 			background-color: rgb(174, 174, 174);
+		
 		}
+	}
+}
+
+@media screen and (max-width: 780px) {
+	.libraries-list {
+		width: 100%;
 	}
 }
